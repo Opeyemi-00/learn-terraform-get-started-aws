@@ -24,10 +24,10 @@ resource "aws_instance" "app_server" {
 	 instance_type = var.instance_type
 
 
-   vpc_security_group_ids = [module.vpc.default_security_group_ids]
+   vpc_security_group_ids = [module.vpc.default_security_group_id]
    subnet_id   = module.vpc.private_subnets[0]
 
-	 tags {
+	 tags = {
       Name = var.instance_name
 
 	 }

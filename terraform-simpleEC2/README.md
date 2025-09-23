@@ -12,6 +12,8 @@ This project shows how I used Terraform to set up an EC2 instance on AWS. I’ve
 - Attached the **AmazonEC2FullAccess** policy to the user.
 - After the IAM user is created, I downloaded the **Access Key ID** and **Secret Access Key** for the user.
 
+![Create New User in AWS](images/IAM_user.png)
+
 ### 2. **Configure AWS CLI**
 
 - On my local machine, I opened **PowerShell**.
@@ -24,6 +26,8 @@ When prompted, I enter:
 • Default output format: json
 
 Verified the configuration was successful by running: `aws configure list`
+
+![AWS configure](images/aws_configure_list.png)
 
 ### 3. **Clone the GitHub Repository**
 
@@ -52,5 +56,8 @@ After the infrastructure has been created successfully, I commit and push the fi
 ### 8. **Verify the EC2 Instance**
 
 After the Terraform apply completes, I logged into AWS Management Console under EC2 > Instances to confirm that the instance is running.
+
+![New Instance](images/instance.png)
+
 
 

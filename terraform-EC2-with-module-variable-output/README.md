@@ -13,7 +13,8 @@ The goal is to automate infrastructure deployment, so instead of manually config
 - Creates a VPC with a user-defined CIDR block  
 - Sets up multiple public and private subnets across 3 availability zones  
 - Enables DNS hostnames and optional NAT and VPN gateways  
-- Launches an EC2 instance inside one of the private subnets, using variables for AMI ID, instance type, and tags  
+- Launches an EC2 instance inside one of the private subnets
+- Uses variable for AMI ID, instance type, region, and tags  
 - Organizes infrastructure using variables for easy customization  
 
 ![screenshot_of_the_aws_console](images/screenshot_of_the_aws_console.png)
@@ -45,20 +46,21 @@ terraform apply
 
 4. **Use CI/CD with GitHub Actions**
 
-Alternatively, push your changes to GitHub and let the GitHub Actions workflow handle the Terraform deployment automatically. Just ensure the workflow file is in the .github/workflows directory at the root of your repository.
+Alternatively, you can push your changes to GitHub and let the GitHub Actions workflow handle the Terraform deployment automatically. Just ensure the workflow file is in the `.github/workflows` directory at the root of your repository.
 
-**Important Tips**
+⚠️ Important Tips
 
-- Do not commit the `.terraform` directory or `.tfstate` files — these are local caches and state files specific to your environment. Use .gitignore to exclude them.
-- The default AWS region is us-west-2; update it as needed via variables.
-- The GitHub Actions pipeline runs terraform init and terraform apply on each push, so there’s no need to manually run Terraform after pushing code changes.
+- Do not commit `.terraform/` or `*.tfstate` files — use a .gitignore to exclude them.
+- Default AWS region is set to `us-west-2` — change it using variables if needed.
+- If CI/CD is enabled, Terraform will run on each push — no need for local apply unless testing.
 
-**What I Learned**
+📚 What I Learned
 
-- How to structure Terraform projects using modules and variables for reusability
+- How to structure Terraform projects using modules and variables
 - Managing AWS infrastructure with Terraform code rather than manual steps
 - Setting up a basic CI/CD pipeline with GitHub Actions for Terraform
-- Best practices for handling .gitignore and state files
+- Best practices for handling `.gitignore` and state files
 
 - ![gitignore](images/gitignore.png)
+
 

@@ -16,6 +16,7 @@ The goal is to automate infrastructure deployment, so instead of manually config
 - Launches an EC2 instance inside one of the private subnets, using variables for AMI ID, instance type, and tags  
 - Organizes infrastructure using variables for easy customization  
 
+![screenshot_of_the_aws_console](images/screenshot_of_the_aws_console.png)
 ---
 
 ## Getting Started
@@ -39,6 +40,9 @@ terraform init
 terraform plan
 terraform apply
 ```
+![terraform plan](images/terraform_plan.png)
+
+
 4. **Use CI/CD with GitHub Actions**
 
 Alternatively, push your changes to GitHub and let the GitHub Actions workflow handle the Terraform deployment automatically. Just ensure the workflow file is in the .github/workflows directory at the root of your repository.
@@ -55,3 +59,6 @@ Alternatively, push your changes to GitHub and let the GitHub Actions workflow h
 - Managing AWS infrastructure with Terraform code rather than manual steps
 - Setting up a basic CI/CD pipeline with GitHub Actions for Terraform
 - Best practices for handling .gitignore and state files
+
+- ![gitignore](images/gitignore.png)
+

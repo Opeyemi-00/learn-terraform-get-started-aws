@@ -32,3 +32,9 @@ resource "aws_instance" "app_server" {
 	name = var.instance_name
 	}
 }
+
+/*
+
+just to check
+
+*/

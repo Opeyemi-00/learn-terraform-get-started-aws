@@ -10,7 +10,9 @@ This Terraform configuration:
 - Enables DNS hostnames, NAT Gateway, and optional VPN support  
 - Launches multiple EC2 instances into private subnets  
 - Uses a custom security group that allows HTTPS and custom TCP ports  
-- Uses variables for flexibility and reusability 
+- Uses variables for flexibility and reusability
+
+![screenshot_of_the_aws_console](Images/awsconsole.png)
 
 🔧 Prerequisites
 
@@ -38,6 +40,9 @@ terraform init
 terraform plan
 terraform apply
 ```
+
+![screenshot_of_the_aws_console](Images/plan.png)
+
 🧩 Modules Used
 
 - [`terraform-aws-modules/vpc/aws`](https://registry.terraform.io/modules/terraform-aws-modules/vpc/aws)
@@ -51,3 +56,4 @@ terraform apply
 - How to improve the security setup of my VPC and EC2 deployment
 - How to oganize Terraform projects more cleanly
 
+![screenshot_of_the_aws_console](Images/state_list.png)

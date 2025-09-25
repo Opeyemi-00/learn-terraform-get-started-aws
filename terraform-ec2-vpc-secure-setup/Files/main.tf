@@ -23,6 +23,7 @@ module "vpc" {
 module "ec2_instances" {
   source  = "terraform-aws-modules/ec2-instance/aws"
   version = "6.1.1"
+  count   = var.instance_count
 
   name          = var.instance_name
   ami           = var.ami_id

@@ -85,3 +85,36 @@ variable "instance_count" {
   default     = 2
 }
 
+variable "ingress_rules" {
+  description = "custom ingress rule"
+  type        = list(string)
+  default     = ["https-443-tcp", "ssh-tcp", "rdp-tcp"]
+}
+
+variable "ingress_with_cidr_blocks" {
+  description = "custom"
+  type = list(object({
+    from_port   = number
+    to_port     = number
+    protocol    = string
+    description = string
+    cidr_blocks = string
+
+    })
+
+  )
+
+  default = [
+    {
+
+      from_port   = 8080
+      to_port     = 8090
+      protocol    = "tcp"
+      description = "servicerule"
+      cidr_blocks = "10.10.0.0/16"
+
+    }
+
+
+  ]
+}

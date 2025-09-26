@@ -34,26 +34,14 @@ module "ec2_instances" {
 }
 
 module "aws_security_group" {
-  source = "terraform-aws-modules/security-group/aws"
+  source  = "terraform-aws-modules/security-group/aws"
+  version = "~> 5.1.0"
 
   name        = "allowtls"
   description = "rule to allow tls"
   vpc_id      = module.vpc.vpc_id
 
-  ingress_cidr_blocks = ["10.10.0.0/16"]
-  ingress_rules       = ["https-443-tcp"]
-  ingress_with_cidr_blocks = [
-    {
-      from_port   = 8080
-      to_port     = 8090
-      protocol    = "tcp"
-      description = "allow tls"
-      cidr_blocks = "10.10.0.0/16"
-
-
-    }
-
-
-
-  ]
+  ingress_cidr_blocks      = ["10.10.0.0/16"]
+  ingress_rules            = var.ingress_rules
+  ingress_with_cidr_blocks = var.ingress_with_cidr_blocks
 }

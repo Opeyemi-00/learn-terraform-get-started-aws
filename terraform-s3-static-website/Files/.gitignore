@@ -1,0 +1,5 @@
+
+
+# Ignore Terraform directories (local cache, modules, providers)
+.terraform/
+

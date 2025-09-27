@@ -58,3 +58,28 @@ http://<your-bucket-name>.s3-website-<region>.amazonaws.com
 
 ## 📸 Screenshots
 
+### 1. AWS S3 Bucket (From AWS Console)
+
+![S3 Bucket in AWS Console](Images/s3bucket.png)
+
+### 2. Static Website Hosting
+
+![S3 Bucket in AWS Console](Images/static_website_hosting.png)
+
+### 3. terraform plan
+
+![S3 Bucket in AWS Console](Images/plan.png)
+
+### 4. terraform state list
+
+![S3 Bucket in AWS Console](Images/state_list.png)
+
+### 5. Website in Browser (Index)
+
+![S3 Bucket in AWS Console](Images/index.png)
+
+### 6 . Website in Browser (Error)
+
+![S3 Bucket in AWS Console](Images/error.png)
+
+

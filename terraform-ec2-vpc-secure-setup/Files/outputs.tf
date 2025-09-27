@@ -8,7 +8,3 @@ output "vpc_public_subnets" {
 	value = module.vpc.public_subnets
 }
 
-output "instance_hostnames" {
-	description = "instance hostame"
-	value = module.e2_instances.private_dns
-}

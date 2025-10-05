@@ -40,7 +40,7 @@ This design follows a typical 3-tier architecture pattern:
    terraform init
    ```
 3. Validate and review the plan:
-  ```bash
+   ```bash
    terraform validate
    terraform plan
    ```
@@ -66,3 +66,26 @@ This project helped me improve my understanding of:
 - Managing dependencies between layers
 - Security best practices in AWS
 - Debugging Terraform syntax and logic
+
+## 📸 Screenshots
+
+### 1. VPC (From AWS Console)
+
+![S3 Bucket in AWS Console](Images/testvpc.png)
+
+### 2. ALB
+
+![S3 Bucket in AWS Console](Images/alb.png)
+
+### 3. EC2 Instance
+
+![S3 Bucket in AWS Console](Images/Instance.png)
+
+### 4. RDS
+
+![S3 Bucket in AWS Console](Images/rds.png)
+
+### 5. RDS
+
+![S3 Bucket in AWS Console](Images/rds2.png)
+

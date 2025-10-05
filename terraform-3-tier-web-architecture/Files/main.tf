@@ -32,6 +32,27 @@ module "aws_security_group" {
   ingress_with_cidr_blocks = var.ingress_with_cidr_blocks
 }
 
+
+module "aws_security_group_rds" {
+  source  = "terraform-aws-modules/security-group/aws"
+  version = ">= 5.3.0"
+
+  name        = "rds-access"
+  description = "allow rds"
+  vpc_id        = module.vpc.vpc_id
+
+  ingress_cidr_blocks      = ["10.10.0.0/16"]
+  ingress_rules            = ["ssh-tcp"]
+  ingress_with_cidr_blocks = [{
+  from_port =3306
+  to_port = 3306
+  protocol = "tcp"
+  description = "allow rds"
+  cidr_blocks = "10.10.0.0/16"
+
+  }]
+}
+
 module "ec2_instances" {
   source  = "terraform-aws-modules/ec2-instance/aws"
   version = ">= 6.0.0"
@@ -64,6 +85,7 @@ resource "aws_db_instance" "testdb" {
   skip_final_snapshot  = true
   deletion_protection  = false
   db_subnet_group_name = aws_db_subnet_group.dbgroup.name
+  vpc_security_group_ids = [module.aws_security_group_rds.security_group_id]
 }
 
 module "alb" {
